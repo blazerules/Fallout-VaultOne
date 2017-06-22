@@ -209,11 +209,9 @@ var/global/normal_ooc_colour = "#002eb8"
 			message_admins("[key_name_admin(src)] has attempted to advertise in OOC: [msg]")
 			return
 
-	log_ooc("(LOCAL) [mob.name]/[key] : [msg]")
-
-	var/mob/source = mob.get_looc_source()
-
 	var/display_name = key
+	var/mob/source = mob.get_looc_source()
+	log_ooc("(LOCAL) [mob.name]/[display_name] : [msg]")
 	if(holder && holder.fakekey)
 		display_name = holder.fakekey
 	if(mob.stat != DEAD)
